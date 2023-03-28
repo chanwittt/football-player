@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  backend1:
+    image: express-football-api
+    ports:
+      - "5001:4000"
+  backend2:
+    image: express-football-api
+    ports:
+      - "5002:4000"
+  backend3:
+    image: express-football-api
+    ports:
+      - "5003:4000"
+
