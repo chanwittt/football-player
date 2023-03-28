@@ -3,11 +3,11 @@ info:
   title: Football player API
   description: List of Top 25 Football players.
   version: 1.0.0
-# servers:
-#   - url: https://private.movie.xc-demo.com/
-#     description: Optional server description, e.g. Main (production) server
-#   - url: http://express.mylab.local
-#     description: Optional server description, e.g. Internal staging server for testing
+servers:
+  - url: https://api.mylab.local/
+    description: Optional server description, e.g. Main (production) server
+  # - url: http://express.mylab.local
+  #   description: Optional server description, e.g. Internal staging server for testing
 paths:
   /player:
     get:
@@ -34,6 +34,8 @@ paths:
               properties:
                   playerId:
                     type: integer
+                    format: "int32"
+                    minimum: 26
                   name: 
                     type: string
                   position:
