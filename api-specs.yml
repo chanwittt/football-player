@@ -1,0 +1,91 @@
+openapi: 3.0.0
+info:
+  title: Football player API
+  description: List of Top 25 Football players.
+  version: 1.0.0
+# servers:
+#   - url: https://private.movie.xc-demo.com/
+#     description: Optional server description, e.g. Main (production) server
+#   - url: http://express.mylab.local
+#     description: Optional server description, e.g. Internal staging server for testing
+paths:
+  /player:
+    get:
+      summary: Top 25 Football players.
+      description: List of Top 25 Football players.
+      responses:
+        '200':    # status code
+          description: List of Top 25 Football players.
+          content:
+            application/json:
+              schema: 
+                type: object
+                items:
+                  type: object
+    post:
+      summary: Add new player.
+      description: Add new player.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                  playerId:
+                    type: integer
+                  name: 
+                    type: string
+                  position:
+                    type: string
+                  nation: 
+                    type: string
+                  age:
+                    type: string
+                  highesValue:
+                    type: string
+                  lastUpdate:
+                    type: string
+                  marketValue:
+                    type: string
+      responses:
+        '200':    # status code
+          description: success
+          content:
+            application/json:
+              schema: 
+                type: string
+                items: 
+                  type: string 
+
+  /player/:playerId:
+    get:
+      summary: Get a player by id.
+      description: Return player details.
+      responses:
+        '200':    # status code
+          description: success
+          content:
+            application/json:
+              schema: 
+                type: object
+                items: 
+                  type: object     
+    delete:
+      summary: delete player by id.
+      description: delete player by id.
+      parameters:
+      - in: path
+        name: player
+        schema:
+          type: integer
+        required: true
+      responses:
+        '200':    # status code
+          description: success
+          content:
+            application/json:
+              schema: 
+                type: string
+                items: 
+                  type: string     
