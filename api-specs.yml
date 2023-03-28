@@ -58,10 +58,16 @@ paths:
                 items: 
                   type: string 
 
-  /player/:playerId:
+  /player/{playerId}:
     get:
       summary: Get a player by id.
       description: Return player details.
+      parameters:
+      - in: path
+        name: playerId
+        schema:
+          type: integer
+        required: true
       responses:
         '200':    # status code
           description: success
@@ -76,7 +82,7 @@ paths:
       description: delete player by id.
       parameters:
       - in: path
-        name: player
+        name: playerId
         schema:
           type: integer
         required: true
